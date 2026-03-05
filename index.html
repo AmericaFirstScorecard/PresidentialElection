@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mock Gov Election Center</title>
+  <title>Mock Gov Election Desk</title>
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -13,47 +13,58 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">Mock Government Election Center</p>
-        <h1>Live Presidential Results</h1>
+  <header>
+    <h1>Mock Gov Live Presidential Election Desk</h1>
+    <p>County votes roll into states. States roll into national totals.</p>
+    <div id="status">Loading live results…</div>
+  </header>
+
+  <main>
+    <section class="summary-grid">
+      <article>
+        <h2>National Popular Vote</h2>
+        <div id="nationalTotals" class="totals"></div>
+      </article>
+      <article>
+        <h2>State Calls</h2>
+        <div id="stateCalls" class="totals"></div>
+      </article>
+      <article>
+        <h2>Reporting Progress</h2>
+        <div id="reportingSummary" class="totals"></div>
+      </article>
+    </section>
+
+    <section class="maps-grid">
+      <article>
+        <h2>States Map</h2>
+        <div id="statesMap" class="map"></div>
+      </article>
+      <article>
+        <h2>Counties Map</h2>
+        <div id="countiesMap" class="map"></div>
+      </article>
+    </section>
+
+    <section>
+      <h2>State Results from County Totals + State Sheet Status</h2>
+      <div class="table-wrap">
+        <table id="stateTable">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Leader</th>
+              <th>Votes</th>
+              <th>Margin</th>
+              <th>Reporting %</th>
+              <th>Called For</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
-      <div id="status" class="status">Loading live feed…</div>
-    </header>
-
-    <main>
-      <section class="summary-grid">
-        <article class="panel">
-          <h2>National Outlook</h2>
-          <div id="nationalOverview" class="metric-list"></div>
-        </article>
-        <article class="panel">
-          <h2>Called States</h2>
-          <div id="calledOverview" class="metric-list"></div>
-        </article>
-        <article class="panel">
-          <h2>Reporting Progress</h2>
-          <div id="reportingOverview" class="metric-list"></div>
-        </article>
-      </section>
-
-      <section class="panel map-panel">
-        <div class="map-header">
-          <div>
-            <h2>U.S. Election Map</h2>
-            <p>Zoom in for county shading. Zoom out for state shading.</p>
-          </div>
-          <div class="legend">
-            <span><i class="swatch dem"></i> Democrat</span>
-            <span><i class="swatch rep"></i> Republican</span>
-            <span><i class="swatch other"></i> Other / Uncalled</span>
-          </div>
-        </div>
-        <div id="electionMap" class="map"></div>
-      </section>
-    </main>
-  </div>
+    </section>
+  </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
