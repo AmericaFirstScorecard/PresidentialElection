@@ -1,0 +1,100 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111a2b;
+  --panel-soft: #18243a;
+  --text: #e7ecf7;
+  --muted: #98a4bd;
+  --border: #24324d;
+  --dem: #2563eb;
+  --rep: #dc2626;
+  --other: #64748b;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(100% 120% at 50% 0%, #14274a 0%, var(--bg) 55%);
+}
+
+.shell { max-width: 1380px; margin: 0 auto; padding: 1rem; }
+.topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.eyebrow {
+  margin: 0;
+  color: #b8c7e6;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .75rem;
+}
+h1 { margin: .2rem 0 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+.status { color: var(--muted); font-size: .92rem; }
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)) , var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: .9rem;
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
+.panel h2 { margin: 0 0 .7rem; font-size: 1.1rem; }
+.metric-list { display: grid; gap: .5rem; }
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--panel-soft);
+  border-radius: 10px;
+  padding: .5rem .65rem;
+}
+.metric .label { color: #d8e3ff; font-weight: 600; }
+.metric .value { color: #f8fbff; }
+
+.map-panel { padding-bottom: .75rem; }
+.map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .55rem;
+}
+.map-header p { margin: 0; color: var(--muted); font-size: .9rem; }
+.legend { display: flex; gap: .8rem; flex-wrap: wrap; color: #d8e3ff; font-size: .85rem; }
+.swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: .35rem;
+}
+.swatch.dem { background: var(--dem); }
+.swatch.rep { background: var(--rep); }
+.swatch.other { background: var(--other); }
+
+.map {
+  height: 620px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.leaflet-container { background: #0a1324; }
+.leaflet-tooltip {
+  border-radius: 8px;
+  border: 1px solid #1f2d45;
+  background: rgba(10, 19, 36, .95);
+  color: #e8eeff;
+}
