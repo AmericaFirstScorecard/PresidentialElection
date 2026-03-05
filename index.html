@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mock Gov Election Desk</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Mock Gov Live Presidential Election Desk</h1>
+    <p>County votes roll into states. States roll into national totals.</p>
+    <div id="status">Loading live results…</div>
+  </header>
+
+  <main>
+    <section class="summary-grid">
+      <article>
+        <h2>National Popular Vote</h2>
+        <div id="nationalTotals" class="totals"></div>
+      </article>
+      <article>
+        <h2>State Calls</h2>
+        <div id="stateCalls" class="totals"></div>
+      </article>
+      <article>
+        <h2>Reporting Progress</h2>
+        <div id="reportingSummary" class="totals"></div>
+      </article>
+    </section>
+
+    <section class="maps-grid">
+      <article>
+        <h2>States Map</h2>
+        <div id="statesMap" class="map"></div>
+      </article>
+      <article>
+        <h2>Counties Map</h2>
+        <div id="countiesMap" class="map"></div>
+      </article>
+    </section>
+
+    <section>
+      <h2>State Results from County Totals + State Sheet Status</h2>
+      <div class="table-wrap">
+        <table id="stateTable">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Leader</th>
+              <th>Votes</th>
+              <th>Margin</th>
+              <th>Reporting %</th>
+              <th>Called For</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
